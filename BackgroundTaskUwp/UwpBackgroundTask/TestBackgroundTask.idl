@@ -1,0 +1,8 @@
+namespace UwpBackgroundTask
+{
+    [default_interface]
+    runtimeclass TestBackgroundTask : Windows.ApplicationModel.Background.IBackgroundTask
+    {
+        TestBackgroundTask();
+    }
+}
