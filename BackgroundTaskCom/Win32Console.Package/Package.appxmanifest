@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+  xmlns:com4="http://schemas.microsoft.com/appx/manifest/com/windows10/4"
+  IgnorableNamespaces="uap rescap com4">
+
+  <Identity
+    Name="Win32ConsoleCom"
+    Publisher="CN=Michael Koster"
+    Version="1.0.1.2" />
+
+  <Properties>
+    <DisplayName>>Win32ConsoleCom</DisplayName>
+    <PublisherDisplayName>Michael Koster</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19041.0" MaxVersionTested="10.0.22621.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Windows.FullTrustApplication">
+      <uap:VisualElements
+        DisplayName="Win32ConsoleCom"
+        Description="Win32 Console Application hosting a COM Out of Process Background Task"
+        BackgroundColor="transparent"
+        Square150x150Logo="Images\Square150x150Logo.png"
+        Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" />
+        <uap:SplashScreen Image="Images\SplashScreen.png" />
+      </uap:VisualElements>
+      <Extensions>
+        <com4:Extension Category="windows.comServer">
+          <com4:ComServer>
+            <com4:ExeServer Executable="ComBackgroundTask\ComBackgroundTask.exe" Arguments="-RegisterProcessAsComServer" DisplayName="ComBackgroundTask">
+              <com4:Class Id="B2BCEBC2-8ED5-44B3-8866-AF29A6EC258F" DisplayName="Time Triggered Sample Background Task" />
+            </com4:ExeServer>
+          </com4:ComServer>
+        </com4:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <!--<rescap:Capability Name="extendedExecutionUnconstrained" />-->
+    <rescap:Capability Name="extendedBackgroundTaskTime" />
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>

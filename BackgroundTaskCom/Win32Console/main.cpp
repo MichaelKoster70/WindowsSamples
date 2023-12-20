@@ -4,8 +4,7 @@
 //   Licensed under the MIT License.
 // </copyright>
 // ----------------------------------------------------------------------------
-// This sample demonstrates how to register a background task
-// for a UWP application using C++/WinRT.
+// This sample demonstrates how to register a COM based background task
 // ----------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------
@@ -17,6 +16,7 @@
 #include <winrt/Windows.ApplicationModel.Background.h>
 #include <winrt/Windows.Foundation.h>
 #include <winrt/windows.foundation.collections.h>
+#include ".\..\..\BackgroundTaskCom\ComBackgroundTask\TestTask.h"
 
 using namespace winrt::Windows::ApplicationModel::Background;
 
@@ -42,7 +42,18 @@ int main()
       std::cout << "Background access granted\n";
 
       std::cout << "STEP 3: Register Background Task\n";
-      BackgroundTaskClient::Register (L"TimeBackgroundTask", L"UwpBackgroundTask.TestBackgroundTask", TimeTrigger(15, false));
+      auto registration = BackgroundTaskClient::Register(L"TimeBackgroundTask", _uuidof(TestTask), TimeTrigger(15, false));
+      registration.Completed([](auto&&, auto&&)
+      {
+         std::cout << "Background task completed\n";
+      });
+
+      registration.Progress([](auto&&, BackgroundTaskProgressEventArgs args)
+      {
+         std::cout << "Background task progress =" << args.Progress() << std::endl;
+      });
+
+      // Application triggers are not supported in Win32 apps
    }
    else
    {

@@ -14,11 +14,13 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{27CF654E-0ED7-454A-B03E-4D6E1C314630}</ProjectGuid>
-    <RootNamespace>ConsoleApplication</RootNamespace>
+    <ProjectGuid>{b6e4f3d5-b47d-410b-9525-16e066a80e0f}</ProjectGuid>
+    <RootNamespace>ComBackgroundTask</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>ComBackgroundTask</ProjectName>
     <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
-    <ProjectName>Win32Console</ProjectName>
+    <CppWinRTOptimized>true</CppWinRTOptimized>
+    <CppWinRTGenerateWindowsMetadata>true</CppWinRTGenerateWindowsMetadata>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -75,14 +77,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BackgroundTaskClient.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TaskFactory.cpp" />
+    <ClCompile Include="TestTask.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Win32Console\Win32Console.vcxproj" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BackgroundTaskClient.h" />
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="RegisterProcessForComType.h" />
+    <ClInclude Include="TaskFactory.h" />
+    <ClInclude Include="TestTask.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

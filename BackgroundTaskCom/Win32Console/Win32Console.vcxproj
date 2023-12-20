@@ -14,8 +14,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{27CF654E-0ED7-454A-B03E-4D6E1C314630}</ProjectGuid>
-    <RootNamespace>ConsoleApplication</RootNamespace>
+    <ProjectGuid>{79e8a537-ab5a-4c3e-a03c-761f6ca1f587}</ProjectGuid>
+    <RootNamespace>Win32Console</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
     <ProjectName>Win32Console</ProjectName>
