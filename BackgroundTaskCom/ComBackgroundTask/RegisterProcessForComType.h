@@ -80,7 +80,7 @@ public:
 
          check_hresult(WaitForSingleObject(g_processExitEvent.get(), INFINITE));
 
-         hr = S_OK();
+         hr = S_OK;
       }
       catch (...)
       {

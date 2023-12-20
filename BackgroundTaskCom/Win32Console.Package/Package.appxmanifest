@@ -51,7 +51,7 @@
 
   <Capabilities>
     <Capability Name="internetClient" />
-    <rescap:Capability Name="extendedExecutionUnconstrained" />
+    <!--<rescap:Capability Name="extendedExecutionUnconstrained" />-->
     <rescap:Capability Name="extendedBackgroundTaskTime" />
     <rescap:Capability Name="runFullTrust" />
   </Capabilities>

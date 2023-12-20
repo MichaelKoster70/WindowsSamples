@@ -17,6 +17,7 @@
 #include <winrt/Windows.ApplicationModel.Background.h>
 #include <winrt/Windows.Foundation.h>
 #include <winrt/windows.foundation.collections.h>
+#include "D:\Projects\WindowsSamples\BackgroundTaskCom\ComBackgroundTask\TestTask.h"
 
 using namespace winrt::Windows::ApplicationModel::Background;
 
@@ -42,13 +43,23 @@ int main()
       std::cout << "Background access granted\n";
 
       std::cout << "STEP 3: Register Background Task\n";
-      BackgroundTaskClient::Register (L"TimeBackgroundTask", L"UwpBackgroundTask.TestBackgroundTask", TimeTrigger(15, false));
+      auto registration = BackgroundTaskClient::Register(L"TimeBackgroundTask", _uuidof(TestTask), TimeTrigger(15, false));
+      registration.Completed([](auto&&, auto&&)
+      {
+         std::cout << "Background task completed\n";
+      });
+
+      registration.Progress([](auto&&, BackgroundTaskProgressEventArgs args)
+      {
+         std::cout << "Background task progress =" << args.Progress() << std::endl;
+      });
+
+      // Application triggers are not supported in Win32 apps
    }
    else
    {
       std::cout << "Background access denied\n";
    }
-
 
    // wait for a keypress to exit
    std::cout << "Press any key to exit\n";

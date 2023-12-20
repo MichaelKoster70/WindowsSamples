@@ -82,6 +82,7 @@
     <ClCompile Include="TestTask.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Win32Console\Win32Console.vcxproj" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

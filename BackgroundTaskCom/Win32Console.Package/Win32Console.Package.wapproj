@@ -24,7 +24,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
     <NoWarn>$(NoWarn);NU1702</NoWarn>
-    <EntryPointProjectUniqueName>..\..\BackgroundTaskUwp\Win32Console\Win32Console.vcxproj</EntryPointProjectUniqueName>
+    <EntryPointProjectUniqueName>..\Win32Console\Win32Console.vcxproj</EntryPointProjectUniqueName>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -45,7 +45,7 @@
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.756" PrivateAssets="all" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BackgroundTaskUwp\Win32Console\Win32Console.vcxproj" />
     <ProjectReference Include="..\ComBackgroundTask\ComBackgroundTask.vcxproj" />
+    <ProjectReference Include="..\Win32Console\Win32Console.vcxproj" />
   </ItemGroup>
 </Project>
