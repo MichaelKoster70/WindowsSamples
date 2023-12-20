@@ -4,8 +4,7 @@
 //   Licensed under the MIT License.
 // </copyright>
 // ----------------------------------------------------------------------------
-// This sample demonstrates how to register a background task
-// for a UWP application using C++/WinRT.
+// This sample demonstrates how to register a COM based background task
 // ----------------------------------------------------------------------------
 
 // ----------------------------------------------------------------------------
@@ -17,7 +16,7 @@
 #include <winrt/Windows.ApplicationModel.Background.h>
 #include <winrt/Windows.Foundation.h>
 #include <winrt/windows.foundation.collections.h>
-#include "D:\Projects\WindowsSamples\BackgroundTaskCom\ComBackgroundTask\TestTask.h"
+#include ".\..\..\BackgroundTaskCom\ComBackgroundTask\TestTask.h"
 
 using namespace winrt::Windows::ApplicationModel::Background;
 

@@ -6,7 +6,7 @@
     <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
     <CppWinRTGenerateWindowsMetadata>true</CppWinRTGenerateWindowsMetadata>
     <MinimalCoreWin>true</MinimalCoreWin>
-    <ProjectGuid>{E6D0A435-53B4-4F87-9B45-5386B9D97EF6}</ProjectGuid>
+    <ProjectGuid>{D9804FB8-2B81-4F78-848A-4147BD345774}</ProjectGuid>
     <ProjectName>UwpBackgroundTask</ProjectName>
     <RootNamespace>UwpBackgroundTask</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>

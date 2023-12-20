@@ -22,22 +22,20 @@
 /// <param name="taskName">The task name.</param>
 /// <param name="taskEntryPoint">The UWP entry point</param>
 /// <param name="trigger"></param>
-IBackgroundTaskRegistration BackgroundTaskClient::Register(std::wstring taskName, guid classId, IBackgroundTrigger trigger)
+void BackgroundTaskClient::Register(std::wstring taskName, std::wstring taskEntryPoint, IBackgroundTrigger trigger)
 {
    // Check if the task is already registered.
    if (IsTaskRegistered(taskName))
    {
-      return nullptr;
+      return;
    }
 
    // Register the background task with name and trigger.
    auto builder = BackgroundTaskBuilder();
    builder.Name(taskName);
    builder.SetTrigger(trigger);
-   builder.SetTaskEntryPointClsid(classId);
+   builder.TaskEntryPoint(taskEntryPoint);
    auto registration = builder.Register();
-
-   return registration;
 }
 
 /// <summary>

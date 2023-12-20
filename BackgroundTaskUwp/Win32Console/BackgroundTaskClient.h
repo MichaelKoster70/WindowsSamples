@@ -14,7 +14,6 @@
 #include <string>
 #include "winrt/Windows.ApplicationModel.Background.h"
 
-using namespace winrt;
 using namespace winrt::Windows::ApplicationModel::Background;
 
 // ----------------------------------------------------------------------------
@@ -36,7 +35,7 @@ public:
    /// <param name="taskName">The task name.</param>
    /// <param name="taskEntryPoint">The UWP entry point</param>
    /// <param name="trigger"></param>
-   static IBackgroundTaskRegistration Register(std::wstring taskName, _In_ guid classId, IBackgroundTrigger trigger);
+   static void Register(std::wstring taskName, std::wstring taskEntryPoint, IBackgroundTrigger trigger);
 
 private:
    /// <summary>
