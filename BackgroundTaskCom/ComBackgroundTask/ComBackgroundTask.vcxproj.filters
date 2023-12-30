@@ -43,4 +43,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="..\Win32Console\ComBackgroundTask.exe.manifest" />
+  </ItemGroup>
 </Project>

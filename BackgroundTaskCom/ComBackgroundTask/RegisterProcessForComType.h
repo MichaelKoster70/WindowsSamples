@@ -76,7 +76,7 @@ public:
          check_bool(bool{ g_processExitEvent });
 
          com_ptr<IClassFactory> taskFactory = make<T>();
-         check_hresult(CoRegisterClassObject(classId, winrt::make<T>().get(), CLSCTX_LOCAL_SERVER, REGCLS_MULTIPLEUSE, &registrationToken));
+         check_hresult(CoRegisterClassObject(classId, taskFactory.get(), CLSCTX_LOCAL_SERVER, REGCLS_MULTIPLEUSE, &registrationToken));
 
          check_hresult(WaitForSingleObject(g_processExitEvent.get(), INFINITE));
 

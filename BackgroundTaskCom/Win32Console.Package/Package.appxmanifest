@@ -10,7 +10,7 @@
   <Identity
     Name="Win32ConsoleCom"
     Publisher="CN=Michael Koster"
-    Version="1.0.1.2" />
+    Version="1.1.0.0" />
 
   <Properties>
     <DisplayName>>Win32ConsoleCom</DisplayName>

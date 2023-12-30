@@ -54,6 +54,7 @@ void __stdcall TestTask::Run(_In_ IBackgroundTaskInstance taskInstance)
 
    std::cout << "TestTask::Run - completed on prime=" << currentPrimeNumber << std::endl;
    check_bool(SetEvent(g_taskFactoryCompletionEvent.get()));
+
    taskDeferral.Complete();
 }
 

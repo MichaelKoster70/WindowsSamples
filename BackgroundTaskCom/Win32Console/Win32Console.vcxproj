@@ -46,6 +46,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>Win32ConsoleCom</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <TargetName>Win32ConsoleCom</TargetName>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -76,13 +82,22 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BackgroundTaskClient.cpp" />
+    <ClCompile Include="ExecutionMode.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MsixPackageHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BackgroundTaskClient.h" />
+    <ClInclude Include="ExecutionMode.h" />
+    <ClInclude Include="MsixPackageHelper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="Win32ConsoleCom.exe.manifest">
+      <DeploymentContent>true</DeploymentContent>
+    </Manifest>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
