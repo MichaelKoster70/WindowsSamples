@@ -24,7 +24,7 @@
     <ClCompile Include="ExecutionMode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PackageHelper.cpp">
+    <ClCompile Include="MsixPackageHelper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +38,7 @@
     <ClInclude Include="ExecutionMode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PackageHelper.h">
+    <ClInclude Include="MsixPackageHelper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

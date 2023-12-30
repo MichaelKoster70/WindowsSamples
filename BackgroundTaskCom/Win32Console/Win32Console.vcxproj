@@ -84,7 +84,7 @@
     <ClCompile Include="BackgroundTaskClient.cpp" />
     <ClCompile Include="ExecutionMode.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="PackageHelper.cpp" />
+    <ClCompile Include="MsixPackageHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -92,7 +92,7 @@
   <ItemGroup>
     <ClInclude Include="BackgroundTaskClient.h" />
     <ClInclude Include="ExecutionMode.h" />
-    <ClInclude Include="PackageHelper.h" />
+    <ClInclude Include="MsixPackageHelper.h" />
   </ItemGroup>
   <ItemGroup>
     <Manifest Include="Win32ConsoleCom.exe.manifest">

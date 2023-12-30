@@ -20,7 +20,7 @@
 #include "winrt/windows.foundation.collections.h"
 #include "./../ComBackgroundTask/TestTask.h"
 #include "ExecutionMode.h"
-#include "PackageHelper.h"
+#include "MsixPackageHelper.h"
 
 // ----------------------------------------------------------------------------
 // Usings
@@ -59,7 +59,7 @@ int main()
       }
 
       std::cout << "STEP 0: Install sparse package\n";
-      auto registered = PackageHelper::RegisterSparsePackage(externalLocation, sparsePkgPath);
+      auto registered = MsixPackageHelper::RegisterSparsePackage(externalLocation, sparsePkgPath);
       if (registered)
       {
          std::cout << "Sparse package registered - relaunching\n";
