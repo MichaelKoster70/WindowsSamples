@@ -31,12 +31,12 @@ public:
    ~BackgroundTaskClient() = delete;
 
    /// <summary>
-   /// Registers a background task
+   /// Registers a COM based background task
    /// </summary>
    /// <param name="taskName">The task name.</param>
-   /// <param name="taskEntryPoint">The UWP entry point</param>
-   /// <param name="trigger"></param>
-   static IBackgroundTaskRegistration Register(std::wstring taskName, _In_ guid classId, IBackgroundTrigger trigger);
+   /// <param name="classId">The COM class ID</param>
+   /// <param name="trigger">The task trigger</param>
+   static IBackgroundTaskRegistration Register(std::wstring taskName, guid classId, IBackgroundTrigger trigger);
 
 private:
    /// <summary>

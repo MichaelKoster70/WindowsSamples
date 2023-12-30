@@ -37,12 +37,6 @@ void __stdcall TestTask::Run(_In_ IBackgroundTaskInstance taskInstance)
 
    taskDeferral = taskInstance.GetDeferral();
 
-   //Enable the extendedBackgroundTaskTime capability
-   //auto extendedExecutionSession = ExtendedExecutionSession();
-   //extendedExecutionSession.Reason(ExtendedExecutionReason::Unspecified);
-   //extendedExecutionSession.Description(L"Sample extended background task");
-   //extendedExecutionSession.RequestExtensionAsync().get();
-
    unsigned int currentPrimeNumber = 1;
    while (!isCanceled && (currentPrimeNumber < MaximumPotentialPrime))
    {
@@ -54,6 +48,7 @@ void __stdcall TestTask::Run(_In_ IBackgroundTaskInstance taskInstance)
 
    std::cout << "TestTask::Run - completed on prime=" << currentPrimeNumber << std::endl;
    check_bool(SetEvent(g_taskFactoryCompletionEvent.get()));
+
    taskDeferral.Complete();
 }
 

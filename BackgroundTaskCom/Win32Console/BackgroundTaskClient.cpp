@@ -35,6 +35,10 @@ IBackgroundTaskRegistration BackgroundTaskClient::Register(std::wstring taskName
    builder.Name(taskName);
    builder.SetTrigger(trigger);
    builder.SetTaskEntryPointClsid(classId);
+
+   builder.AddCondition(SystemCondition(SystemConditionType::InternetAvailable));
+   builder.AddCondition(SystemCondition(SystemConditionType::UserPresent));
+
    auto registration = builder.Register();
 
    return registration;

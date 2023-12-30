@@ -27,7 +27,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="..\Win32Console\Win32Console.vcxproj" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RegisterProcessForComType.h">
@@ -42,5 +41,8 @@
     <ClInclude Include="TestTask.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="..\Win32Console\ComBackgroundTask.exe.manifest" />
   </ItemGroup>
 </Project>
