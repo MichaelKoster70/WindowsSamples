@@ -1,13 +1,27 @@
+// ----------------------------------------------------------------------------
+// <copyright company="Michael Koster">
+//   Copyright (c) Michael Koster. All rights reserved.
+//   Licensed under the MIT License.
+// </copyright>
+// ----------------------------------------------------------------------------
+
+// ----------------------------------------------------------------------------
+// Includes
+// ----------------------------------------------------------------------------
 #include <windows.h>
 #include <winevt.h>
 #include <evntprov.h>
 #include <iostream>
-
-#pragma comment(lib, "wevtapi.lib")
-
 #include "Generated/EventLogPublisher.h"
 
+// ----------------------------------------------------------------------------
+// Linker Directives
+// ----------------------------------------------------------------------------
+#pragma comment(lib, "wevtapi.lib")
 
+// ----------------------------------------------------------------------------
+// Function Definitions
+// ----------------------------------------------------------------------------
 void WriteEventLogApplication();
 
 int main()

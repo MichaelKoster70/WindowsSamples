@@ -1,0 +1,2 @@
+#define APPMODELHELPER_API __declspec(dllexport)
+#define APPMODELHELPER_API __declspec(dllimport)
