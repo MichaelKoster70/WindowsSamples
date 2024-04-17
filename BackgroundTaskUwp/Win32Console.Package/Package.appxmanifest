@@ -61,6 +61,9 @@
             <Task Type="timer" />
           </BackgroundTasks>
         </Extension>
+        <uap:Extension Category="windows.appService">
+          <uap:AppService Name="AB" />
+        </uap:Extension>
       </Extensions>
     </Application>
   </Applications>
